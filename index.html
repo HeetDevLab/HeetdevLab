@@ -518,31 +518,16 @@ body.nav-open{
     </div>
   </div>
 
-  <div class="hero-visual hero-3d" id="hero3d" aria-label="Interactive 3D Sentinex security visual">
-    <div class="scene-glow"></div>
-    <div class="grid-floor"></div>
-    <div class="orbit orbit-a"></div>
-    <div class="orbit orbit-b"></div>
-
-    <div class="core-3d">
-      <div class="core-face core-front"><span>S</span></div>
-      <div class="core-face core-back"><span>S</span></div>
-      <div class="core-face core-left"></div>
-      <div class="core-face core-right"></div>
-      <div class="core-face core-top"></div>
-      <div class="core-face core-bottom"></div>
-      <div class="core-shine"></div>
+  <div class="hero-visual hero-webgl" id="hero3d" aria-label="Interactive 3D Sentinex security visual">
+    <canvas id="webglCanvas" aria-hidden="true"></canvas>
+    <div class="webgl-vignette"></div>
+    <div class="webgl-label">
+      <b>SENTINEX</b>
+      <small>SECURE • 3D PROTECTION</small>
     </div>
-
-    <div class="ring ring-1"></div>
-    <div class="ring ring-2"></div>
-    <div class="ring ring-3"></div>
-
     <div class="floating-tag tag-one">🔐 App Protection</div>
     <div class="floating-tag tag-two">⚡ Offline-first</div>
     <div class="floating-tag tag-three">🛡 No Tracking</div>
-
-    <div class="visual-label">SENTINEX<br><small>SECURE • 3D PROTECTION</small></div>
   </div>
 </section>
 
@@ -640,6 +625,7 @@ body.nav-open{
 </footer>
 
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three/build/three.min.js"></script>
 <script src="script.js"></script>
     <script>
 (function(){
