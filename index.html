@@ -1,146 +1,257 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HeetDevLab | Privacy-First Android Security</title>
-<meta name="description" content="HeetDevLab builds privacy-first Android security tools, web utilities and future AI products.">
-<meta name="author" content="HeetDevLab">
-<link rel="canonical" href="https://heetdevlab.github.io/">
-<meta name="color-scheme" content="light dark">
-<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f6fb">
-<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#090c15">
-<meta property="og:type" content="website">
-<meta property="og:title" content="HeetDevLab | Privacy-First Android Security">
-<meta property="og:description" content="Independent Android security and privacy-focused products by HeetDevLab.">
-<meta property="og:url" content="https://heetdevlab.github.io/">
-<meta property="og:image" content="https://heetdevlab.github.io/icon.jpg">
-<link rel="icon" href="/favicon.png">
-<script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
-<link rel="stylesheet" href="/style.css?v=2">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"HeetDevLab","url":"https://heetdevlab.github.io/","logo":"https://heetdevlab.github.io/icon.jpg","founder":{"@type":"Person","name":"Heet Shah"},"sameAs":["https://github.com/HeetDevLab","https://youtube.com/@heetplayscode","https://instagram.com/heetdevlab"]}
-</script>
-<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b12">
+  <meta name="description" content="HeetDevLab is an independent software studio building Android security apps, useful web tools and original games. Made in India.">
+  <meta name="author" content="HeetDevLab">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="HeetDevLab — Apps. Tools. Games.">
+  <meta property="og:description" content="Independent software, privacy-minded tools and original game experiences. Built with curiosity in India.">
+  <meta property="og:url" content="https://heetdevlab.github.io/">
+  <meta property="og:image" content="https://heetdevlab.github.io/icon.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>HeetDevLab — Apps. Tools. Games.</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "HeetDevLab",
+    "url": "https://heetdevlab.github.io/",
+    "description": "Independent software studio building Android security apps, web tools and games.",
+    "sameAs": ["https://youtube.com/@heetplayscode"]
+  }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <div class="page-grid" aria-hidden="true"></div>
 
-<header class="nav">
-  <div class="wrap">
-    <a class="logo" href="/">&lt;/&gt; HeetDevLab<span>.</span></a>
-    <nav class="links" id="links" aria-label="Main">
-      <a href="/" class="active">Home</a>
-      <a href="/Sentinex/">Sentinex</a>
-      <a href="/Webtools/">WebTools <b class="new">NEW</b></a>
-      <a href="/portfolio/">Portfolio</a>
-      <a href="/Blog/">Blog</a>
-      <a href="https://youtube.com/@heetplayscode" target="_blank" rel="noopener">YouTube</a>
-    </nav>
-    <div class="tools">
-      <button class="icon-btn" id="themeBtn" type="button" aria-label="Theme">🖥️</button>
-      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Menu" aria-expanded="false">☰</button>
+  <div class="announcement-bar">
+    <div class="announcement-inner">
+      <p><span class="live-dot" aria-hidden="true"></span> INDEPENDENT SOFTWARE STUDIO <span class="announcement-divider">/</span> MADE IN INDIA</p>
+      <a href="#projects">Explore the ecosystem <span aria-hidden="true">↗</span></a>
     </div>
   </div>
-</header>
 
-<main>
-<section class="hero">
-  <div class="wrap">
-    <div>
-      <span class="eyebrow">INDEPENDENT • PRIVACY-FIRST • INDIA</span>
-      <h1>Building <em>privacy-first</em> Android experiences.</h1>
-      <p class="lead">Security tools, useful utilities and ideas built independently by HeetDevLab, with a strong focus on privacy and offline-first design.</p>
-      <div class="btns">
-        <a class="btn primary" href="/Sentinex/">Explore Sentinex →</a>
-        <a class="btn" href="/Webtools/">Open WebTools</a>
-      </div>
-      <div class="chips"><span>🇮🇳 Made in India</span><span>🚀 Indie built</span><span>🔒 Privacy focused</span></div>
+  <header class="site-header" id="top">
+    <div class="nav-shell">
+      <a class="brand" href="/" aria-label="HeetDevLab home">
+        <span class="brand-symbol" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+        <span class="brand-word">Heet<span>Dev</span>Lab<span class="brand-period">.</span></span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primaryNav">
+        <span></span><span></span>
+      </button>
+
+      <nav class="primary-nav" id="primaryNav" aria-label="Main navigation">
+        <a href="#projects">Apps & tools</a>
+        <a href="#games">Games</a>
+        <a href="#about">About</a>
+        <a href="/portfolio/">Portfolio</a>
+        <a class="nav-cta" href="https://youtube.com/@heetplayscode" target="_blank" rel="noopener noreferrer">Follow the journey <span aria-hidden="true">↗</span></a>
+      </nav>
     </div>
-    <div class="stage" aria-hidden="true">
-      <div class="phone">
-        <div class="screen">
-          <img src="/icon.jpg" alt="" width="84" height="84">
-          <strong>SENTINEX SECURE</strong>
-          <small>🔐 App Protection • ⚡ Offline-first</small>
-          <div class="dots"><i class="on"></i><i class="on"></i><i></i><i></i></div>
+    <button class="nav-backdrop" id="navBackdrop" type="button" aria-label="Close navigation"></button>
+  </header>
+
+  <main id="main">
+    <section class="hero section-shell">
+      <div class="hero-content">
+        <div class="eyebrow"><span class="eyebrow-line"></span> THE DIGITAL WORKSHOP <span class="eyebrow-index">01 — 04</span></div>
+        <h1>We build<br>things that <span class="text-gradient">move ideas.</span></h1>
+        <p class="hero-description">HeetDevLab is an independent software studio creating Android security apps, practical web tools and original game experiences. Built with curiosity. Designed to be useful.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">Explore our work <span aria-hidden="true">↗</span></a>
+          <a class="button button-secondary" href="#games"><span class="play-icon" aria-hidden="true">▶</span> Enter the game lab</a>
+        </div>
+        <div class="hero-footnote">
+          <div class="avatar-stack" aria-hidden="true"><span>H</span><span>:</span><span> D</span></div>
+          <p><strong>Independent by design.</strong><br><span>One studio. Multiple directions.</span></p>
         </div>
       </div>
-    </div>
-  </div>
-</section>
 
-<section class="stats-sec">
-  <div class="wrap stats">
-    <div class="card reveal"><b>1</b><span>Android app live</span></div>
-    <div class="card reveal"><b>7</b><span>Free web tools</span></div>
-    <div class="card reveal"><b>0</b><span>Data collected</span></div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="kicker">01 / PRODUCT</div>
-    <h2>Featured Product</h2>
-    <p class="sub">The project at the center of the HeetDevLab ecosystem.</p>
-    <div class="card feature reveal" data-tilt style="margin-top:24px">
-      <img src="/icon.jpg" alt="Sentinex Secure app icon" width="96" height="96" loading="lazy">
-      <div>
-        <span class="tag live">● LIVE</span>
-        <h3>Sentinex Secure</h3>
-        <p class="sub">Smart Android app lock focused on privacy, protection and a lightweight experience.</p>
-        <div class="pills"><span class="pill">🔐 PIN &amp; biometric</span><span class="pill">📸 Intruder detection</span><span class="pill">📊 Unlock logs</span><span class="pill">🛡 Privacy-first</span></div>
-        <a class="btn primary" href="/Sentinex/">View Sentinex →</a>
+      <div class="hero-art" aria-label="A preview of the HeetDevLab product ecosystem">
+        <div class="art-glow" aria-hidden="true"></div>
+        <div class="orbit orbit-large" aria-hidden="true"></div>
+        <div class="orbit orbit-small" aria-hidden="true"></div>
+        <div class="studio-panel">
+          <div class="panel-topline">
+            <div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+            <span>HEETDEVLAB / WORKSPACE</span>
+            <span class="panel-menu" aria-hidden="true">···</span>
+          </div>
+          <div class="panel-intro">
+            <span class="mono-label">CREATIVE SYSTEMS / 2026</span>
+            <div class="panel-title-row"><h2>Build. Refine.<br><em>Release.</em></h2><span class="panel-index">HDL<br>001</span></div>
+          </div>
+          <div class="workspace-list">
+            <a href="/Sentinex/" class="workspace-item">
+              <span class="workspace-icon shield-icon" aria-hidden="true">S</span>
+              <span class="workspace-copy"><strong>Sentinex Secure</strong><small>ANDROID SECURITY</small></span>
+              <span class="workspace-state state-live"><i></i> LIVE</span>
+              <span class="workspace-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a href="#games" class="workspace-item">
+              <span class="workspace-icon game-icon" aria-hidden="true">✳</span>
+              <span class="workspace-copy"><strong>Repair Simulator</strong><small>GAME DEVELOPMENT</small></span>
+              <span class="workspace-state state-build"><i></i> BUILDING</span>
+              <span class="workspace-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a href="/Webtools/" class="workspace-item">
+              <span class="workspace-icon tools-icon" aria-hidden="true">⌘</span>
+              <span class="workspace-copy"><strong>WebTools</strong><small>WEB UTILITIES</small></span>
+              <span class="workspace-state state-live"><i></i> LIVE</span>
+              <span class="workspace-arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <div class="panel-bottom"><span>BUILT WITH PURPOSE</span><span>IND / 26</span></div>
+        </div>
+        <div class="floating-note note-top"><span class="note-spark">✳</span><span>Ideas to products<br><strong>One build at a time.</strong></span></div>
+        <div class="floating-note note-bottom"><span class="note-check">✓</span><span>Small details.<br><strong>Real experiences.</strong></span></div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section>
-  <div class="wrap">
-    <div class="kicker">02 / ECOSYSTEM</div>
-    <h2>What's being built</h2>
-    <p class="sub">A small ecosystem of focused products, not a collection of random demos.</p>
-    <div class="grid">
-      <a class="card reveal" data-tilt href="/Sentinex/"><div class="emoji">🛡️</div><span class="tag live">LIVE</span><h3>Sentinex Secure</h3><p class="sub">Privacy-first Android app protection.</p><span class="more">Explore product →</span></a>
-      <a class="card reveal" data-tilt href="/Webtools/"><div class="emoji">🧰</div><span class="tag live">LIVE</span><h3>WebTools</h3><p class="sub">Browser-based privacy &amp; utility tools.</p><span class="more">Open tools →</span></a>
-      <div class="card reveal" data-tilt><div class="emoji">🗃️</div><span class="tag soon">SOON</span><h3>Sentinex Vault</h3><p class="sub">A privacy-focused vault project in development.</p></div>
-      <div class="card reveal" data-tilt><div class="emoji">🤖</div><span class="tag soon">SOON</span><h3>Nexora</h3><p class="sub">An AI assistant concept for a future release.</p></div>
-    </div>
-  </div>
-</section>
+    <section class="capability-strip section-shell" aria-label="What we create">
+      <span class="strip-label">WHAT WE CREATE</span>
+      <div class="capability"><span>01</span> Android applications</div>
+      <div class="capability"><span>02</span> Web utilities</div>
+      <div class="capability"><span>03</span> Games & simulations</div>
+      <div class="capability"><span>04</span> Experimental ideas</div>
+    </section>
 
-<section>
-  <div class="wrap">
-    <div class="kicker">03 / ABOUT</div>
-    <h2>Independent. Curious. Building.</h2>
-    <p class="sub">HeetDevLab is an independent developer brand focused on Android development, privacy-focused software, web utilities and future AI products.</p>
-    <p class="sub" style="margin-top:10px">The goal is simple: build useful software that feels fast, clear and respectful of the user's privacy.</p>
-    <p style="margin-top:14px">Built by <strong>Heet Shah</strong> · <a class="more" href="/portfolio/">See portfolio →</a></p>
-  </div>
-</section>
-
-<section class="cta">
-  <div class="wrap">
-    <div class="card reveal">
-      <div class="kicker">HAVE AN IDEA?</div>
-      <h2>Let's build something useful.</h2>
-      <div class="btns" style="justify-content:center">
-        <a class="btn primary" href="/portfolio/">View Portfolio</a>
-        <a class="btn" href="https://youtube.com/@heetplayscode" target="_blank" rel="noopener">▶ YouTube</a>
+    <section class="projects-section section-shell" id="projects">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow"><span class="eyebrow-line"></span> THE PRODUCT ECOSYSTEM</div>
+          <h2>Useful by nature.<br><span class="muted-heading">Built with intention.</span></h2>
+        </div>
+        <p>Focused products with a clear purpose — from protecting everyday digital life to making useful tools accessible in a browser.</p>
       </div>
+
+      <div class="product-grid">
+        <article class="product-card product-featured">
+          <div class="product-card-top"><span class="category-label">01 / ANDROID SECURITY</span><span class="status-pill status-live"><i></i> LIVE</span></div>
+          <div class="product-feature-layout">
+            <div class="product-copy">
+              <div class="product-logo product-logo-image"><img src="/icon.jpg" alt="Sentinex Secure app icon" width="76" height="76"></div>
+              <h3>Sentinex <span>Secure</span></h3>
+              <p>A lightweight Android app-lock experience built around privacy, access control and practical protection.</p>
+              <div class="tag-row"><span>App protection</span><span>Intruder detection</span><span>Unlock logs</span></div>
+              <a class="card-link" href="/Sentinex/">Explore Sentinex <span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="sentinex-visual" aria-hidden="true">
+              <div class="ring ring-one"></div><div class="ring ring-two"></div>
+              <div class="secure-emblem"><span>S</span><i></i></div>
+              <div class="secure-caption">YOUR SPACE.<br>YOUR CONTROL.</div>
+            </div>
+          </div>
+          <div class="card-corner-mark" aria-hidden="true">S.</div>
+        </article>
+
+        <article class="product-card vault-card">
+          <div class="product-card-top"><span class="category-label">02 / PRIVATE STORAGE</span><span class="status-pill status-build"><i></i> IN DEVELOPMENT</span></div>
+          <div class="product-logo vault-logo"><img src="/Sentinex%20Vault.svg" alt="Sentinex Vault logo" width="64" height="64"></div>
+          <h3>Sentinex <span>Vault</span></h3>
+          <p>A private space concept for personal files and media, with development continuing.</p>
+          <a class="card-link" href="/Sentinex-Vault/">View the project <span aria-hidden="true">↗</span></a>
+          <div class="vault-lines" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        </article>
+
+        <article class="product-card tools-card">
+          <div class="product-card-top"><span class="category-label">03 / WEB UTILITIES</span><span class="status-pill status-live"><i></i> LIVE</span></div>
+          <div class="product-logo tools-logo" aria-hidden="true"><span>⌘</span></div>
+          <h3>Web<span>Tools</span></h3>
+          <p>A growing collection of handy browser-based tools for everyday digital tasks.</p>
+          <div class="tool-pills"><span>Password</span><span>PIN</span><span>Hash</span><span>Secure notes</span></div>
+          <a class="card-link" href="/Webtools/">Open WebTools <span aria-hidden="true">↗</span></a>
+          <div class="tools-orbit" aria-hidden="true"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="games-section" id="games">
+      <div class="games-inner section-shell">
+        <div class="games-heading">
+          <div>
+            <div class="eyebrow"><span class="eyebrow-line"></span> THE GAME LAB</div>
+            <h2>Not just apps.<br><span class="game-gradient">Worlds to explore.</span></h2>
+          </div>
+          <p>We’re also building original games — starting with hands-on simulation experiences where the details make the difference.</p>
+        </div>
+
+        <article class="game-feature">
+          <div class="game-copy">
+            <div class="game-meta"><span class="game-badge"><i></i> IN DEVELOPMENT</span><span class="category-label">GAME PROJECT / 001</span></div>
+            <div class="game-kicker">THE WORKSHOP IS OPEN</div>
+            <h3>Electronic Repair<br><em>Simulator.</em></h3>
+            <p>Pick up the tools, inspect the device, find the fault and bring it back to life. A repair-focused simulation built around the hands-on workshop experience.</p>
+            <div class="game-tags"><span>01 / Bench-view gameplay</span><span>02 / Device diagnosis</span><span>03 / Component repair</span></div>
+            <a class="button button-game" href="https://youtube.com/@heetplayscode" target="_blank" rel="noopener noreferrer">Follow game development <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="game-art" aria-label="Illustration of an electronic repair workbench">
+            <div class="game-art-top"><span>REPAIR LAB / WORKSTATION 01</span><span class="game-art-live"><i></i> PROTOTYPE</span></div>
+            <div class="bench-scene">
+              <div class="bench-light"></div>
+              <div class="tool-shadow tool-left"></div><div class="tool-shadow tool-right"></div>
+              <div class="device-board">
+                <div class="board-chip chip-a"></div><div class="board-chip chip-b"></div><div class="board-chip chip-c"></div>
+                <div class="board-trace trace-a"></div><div class="board-trace trace-b"></div><div class="board-trace trace-c"></div>
+                <div class="board-port"></div>
+              </div>
+              <div class="repair-phone"><div class="phone-screen"><span class="phone-speaker"></span><span class="phone-crack crack-a"></span><span class="phone-crack crack-b"></span><span class="phone-alert">!</span></div></div>
+              <div class="screwdriver"><span></span></div>
+              <div class="bench-base"></div>
+              <div class="bench-label label-left">DIAGNOSTICS <b>READY</b></div>
+              <div class="bench-label label-right">REPAIR MODE <b>01</b></div>
+            </div>
+            <div class="game-art-bottom"><span>DIAGNOSE</span><i></i><span>REPAIR</span><i></i><span>RESTORE</span><span class="art-version">EARLY BUILD</span></div>
+          </div>
+        </article>
+        <div class="game-lab-footer"><span>MORE EXPERIENCES ARE ON THE WORKBENCH.</span><span>GAME DEVELOPMENT / HEETDEVLAB <b>↗</b></span></div>
+      </div>
+    </section>
+
+    <section class="about-section section-shell" id="about">
+      <div class="about-mark" aria-hidden="true"><span>H</span><i></i><i></i></div>
+      <div class="about-content">
+        <div class="eyebrow"><span class="eyebrow-line"></span> A LITTLE ABOUT THE STUDIO</div>
+        <h2>Curiosity is the<br><span class="muted-heading">starting point.</span></h2>
+        <p>HeetDevLab is an independent developer brand focused on building useful digital products. We work across Android, the web and game development — learning, experimenting and improving with every release.</p>
+        <p>Our approach is simple: keep the experience clear, respect the people using it and make every project a little better than the last.</p>
+        <div class="about-signature"><span class="signature-line"></span><span>Built independently by <strong>Heet Shah</strong></span></div>
+      </div>
+      <div class="about-side-note"><span>OUR APPROACH</span><strong>Thoughtful<br>software.<br>Honest progress.</strong><span class="about-side-index">HDL / 2026</span></div>
+    </section>
+
+    <section class="closing-cta section-shell">
+      <div class="cta-topline"><span>HAVE AN IDEA OR JUST CURIOUS?</span><span>LET’S CONNECT <b>↘</b></span></div>
+      <div class="cta-main"><h2>Good things start<br>with <span class="text-gradient">a first build.</span></h2><a class="button button-primary" href="https://youtube.com/@heetplayscode" target="_blank" rel="noopener noreferrer">Join the journey <span aria-hidden="true">↗</span></a></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-main section-shell">
+      <div class="footer-brand-block">
+        <a class="brand footer-brand" href="/" aria-label="HeetDevLab home"><span class="brand-symbol" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="brand-word">Heet<span>Dev</span>Lab<span class="brand-period">.</span></span></a>
+        <p>Independent software.<br>Built with curiosity in India.</p>
+      </div>
+      <div class="footer-links"><span>EXPLORE</span><a href="#projects">Apps & tools</a><a href="#games">Games</a><a href="/portfolio/">Portfolio</a><a href="/Blog/">Blog</a></div>
+      <div class="footer-links"><span>PRODUCTS</span><a href="/Sentinex/">Sentinex Secure</a><a href="/Sentinex-Vault/">Sentinex Vault</a><a href="/Webtools/">WebTools</a></div>
+      <div class="footer-links"><span>ELSEWHERE</span><a href="https://youtube.com/@heetplayscode" target="_blank" rel="noopener noreferrer">YouTube ↗</a><a href="https://github.com/heetdevlab" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
     </div>
-  </div>
-</section>
-</main>
+    <div class="footer-bottom section-shell"><span>© <span id="currentYear">2026</span> HeetDevLab. All rights reserved.</span><span>MADE IN INDIA <b>✳</b></span><a href="#top">BACK TO TOP ↑</a></div>
+  </footer>
 
-<footer>
-  <div class="wrap">
-    <strong>HeetDevLab.</strong><br>
-    Independent software • Privacy-first thinking • Made in India 🇮🇳<br>
-    © <span id="year">2026</span> HeetDevLab
-  </div>
-</footer>
-
-<script src="/script.js?v=2" defer></script>
+  <script src="/script.js" defer></script>
 </body>
 </html>
