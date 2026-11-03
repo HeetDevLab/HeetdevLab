@@ -1,66 +1,42 @@
-(function () {
-  var root = document.documentElement;
+(() => {
+  const toggle = document.getElementById('menuToggle');
+  const nav = document.getElementById('primaryNav');
+  const backdrop = document.getElementById('navBackdrop');
 
-  /* Theme: system -> light -> dark */
-  var modes = ['system', 'light', 'dark'];
-  var icons = { system: '🖥️', light: '☀️', dark: '🌙' };
-  var btn = document.getElementById('themeBtn');
-  function getMode() { try { return localStorage.getItem('theme') || 'system'; } catch (e) { return 'system'; } }
-  function apply(m) {
-    if (m === 'system') root.removeAttribute('data-theme'); else root.dataset.theme = m;
-    if (btn) { btn.textContent = icons[m]; btn.setAttribute('aria-label', 'Theme: ' + m); }
-  }
-  apply(getMode());
-  if (btn) btn.addEventListener('click', function () {
-    var next = modes[(modes.indexOf(getMode()) + 1) % modes.length];
-    try { localStorage.setItem('theme', next); } catch (e) {}
-    apply(next);
-  });
+  if (toggle && nav && backdrop) {
+    const closeMenu = () => {
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open navigation');
+      nav.classList.remove('is-open');
+      backdrop.classList.remove('is-visible');
+      document.body.classList.remove('menu-open');
+    };
 
-  /* Mobile menu */
-  var mb = document.getElementById('menuBtn'), links = document.getElementById('links');
-  if (mb && links) {
-    mb.addEventListener('click', function () {
-      var open = links.classList.toggle('open');
-      mb.setAttribute('aria-expanded', open);
+    const openMenu = () => {
+      toggle.setAttribute('aria-expanded', 'true');
+      toggle.setAttribute('aria-label', 'Close navigation');
+      nav.classList.add('is-open');
+      backdrop.classList.add('is-visible');
+      document.body.classList.add('menu-open');
+    };
+
+    toggle.addEventListener('click', () => {
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      isOpen ? closeMenu() : openMenu();
     });
-    links.addEventListener('click', function (e) { if (e.target.closest('a')) links.classList.remove('open'); });
-  }
 
-  /* Scroll reveal */
-  var els = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.12 });
-    els.forEach(function (el) { io.observe(el); });
-  } else { els.forEach(function (el) { el.classList.add('in'); }); }
+    backdrop.addEventListener('click', closeMenu);
+    nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
 
-  /* 3D tilt (desktop mouse only, off for reduced motion) */
-  var fine = matchMedia('(hover:hover) and (pointer:fine)').matches &&
-             !matchMedia('(prefers-reduced-motion:reduce)').matches;
-  if (fine) {
-    document.querySelectorAll('[data-tilt]').forEach(function (el) {
-      el.addEventListener('pointermove', function (e) {
-        var r = el.getBoundingClientRect();
-        var x = (e.clientX - r.left) / r.width - 0.5;
-        var y = (e.clientY - r.top) / r.height - 0.5;
-        el.style.transform = 'perspective(800px) rotateY(' + (x * 10) + 'deg) rotateX(' + (-y * 10) + 'deg) translateY(-4px)';
-      });
-      el.addEventListener('pointerleave', function () { el.style.transform = ''; });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeMenu();
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 760) closeMenu();
     });
   }
 
-  /* Footer year */
-  var y = document.getElementById('year');
-  if (y) y.textContent = new Date().getFullYear();
-
-  /* Service worker */
-  if ('serviceWorker' in navigator) {
-    addEventListener('load', function () {
-      navigator.serviceWorker.register('/service-worker.js').catch(function () {});
-    });
-  }
+  const year = document.getElementById('currentYear');
+  if (year) year.textContent = String(new Date().getFullYear());
 })();
