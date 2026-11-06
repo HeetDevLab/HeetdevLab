@@ -1,0 +1,1 @@
+The main HeetDevLab homepage uses a CSS-drawn brand mark and product illustrations. Keep your existing root-level favicon.png and icon.jpg unless you intentionally replace them with the new favicon.svg.

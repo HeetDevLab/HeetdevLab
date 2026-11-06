@@ -1,272 +1,111 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0b0d0b">
-  <meta name="description" content="Heet Shah — Android developer and independent builder. Explore Android apps, web tools and game projects.">
-  <meta name="author" content="Heet Shah">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#08080b">
+  <meta name="description" content="HeetDevLab is an independent software studio building Android apps, useful web tools and original game projects.">
+  <meta name="author" content="HeetDevLab">
+  <meta property="og:title" content="HeetDevLab — Independent Software Studio">
+  <meta property="og:description" content="Useful apps. Thoughtful tools. Original worlds.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Heet Shah — Developer & Builder">
-  <meta property="og:description" content="I turn curious ideas into useful software. Android, web and game projects by Heet Shah.">
-  <meta property="og:url" content="https://heetdevlab.github.io/portfolio/">
-  <title>Heet Shah — Developer & Builder</title>
+  <meta property="og:url" content="https://heetdevlab.github.io/">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <title>HeetDevLab — Independent Software Studio</title>
 </head>
 <body>
-  <div class="page-progress" aria-hidden="true"><span id="pageProgress"></span></div>
-  <div class="noise-layer" aria-hidden="true"></div>
+  <div class="ambient" aria-hidden="true"></div><div class="grid-texture" aria-hidden="true"></div>
+  <canvas id="arrowCanvas" aria-hidden="true"></canvas><div class="scroll-progress" id="scrollProgress"></div>
 
   <header class="site-header" id="top">
-    <a class="wordmark" href="#top" aria-label="Heet Shah home">
-      <span class="wordmark-symbol">H<span>.</span></span>
-      <span class="wordmark-name">HEET<span>SHAH</span></span>
-    </a>
-
-    <nav class="desktop-nav" aria-label="Main navigation">
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#toolkit">Toolkit</a>
-      <a href="#journey">Journey</a>
-      <a href="#contact">Contact</a>
-    </nav>
-
-    <div class="header-actions">
-      <a class="resume-link" href="assets/Heet_Shah_Resume.pdf" download>Resume <span>↗</span></a>
-      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileNav">
-        <span></span><span></span>
-      </button>
-    </div>
-
+    <a class="brand" href="#top" aria-label="HeetDevLab home"><span class="brand-monogram">H<span>.</span></span><span class="brand-copy"><strong>HEETDEVLAB</strong><small>INDEPENDENT SOFTWARE STUDIO</small></span></a>
+    <nav class="desktop-nav" aria-label="Main navigation"><a href="#products">Products</a><a href="#games">Games</a><a href="#studio">The studio</a><a href="https://heetdevlab.github.io/Blog/" target="_blank" rel="noopener">Journal ↗</a><a class="nav-contact" href="https://heetdevlab.github.io/portfolio/">Heet's profile <span>↗</span></a></nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
   </header>
-
-  <div class="nav-backdrop" id="navBackdrop"></div>
-  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation" aria-hidden="true">
-      <div class="mobile-nav-top"><span>MENU / 01</span><span>HEET SHAH</span></div>
-      <a href="#work"><span>01</span> Selected work <i>↗</i></a>
-      <a href="#about"><span>02</span> About me <i>↗</i></a>
-      <a href="#toolkit"><span>03</span> Toolkit <i>↗</i></a>
-      <a href="#journey"><span>04</span> Journey <i>↗</i></a>
-      <a href="#contact"><span>05</span> Contact <i>↗</i></a>
-      <a class="mobile-resume" href="assets/Heet_Shah_Resume.pdf" download>Download resume <i>↓</i></a>
-  </nav>
+  <div class="mobile-backdrop" id="mobileBackdrop"></div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation"><a href="#products">01 / Products <span>↗</span></a><a href="#games">02 / Game worlds <span>↗</span></a><a href="#studio">03 / The studio <span>↗</span></a><a href="https://heetdevlab.github.io/Blog/">04 / Journal <span>↗</span></a><a href="https://heetdevlab.github.io/portfolio/">05 / Heet's profile <span>↗</span></a></nav>
 
   <main>
-    <!-- HERO -->
-    <section class="hero" aria-labelledby="heroTitle">
-      <div class="hero-grid" aria-hidden="true"></div>
-      <div class="hero-copy">
-        <div class="eyebrow"><span class="eyebrow-dot"></span> INDEPENDENT DEVELOPER <b>/</b> INDIA</div>
-        <p class="hero-pretitle">HELLO, I'M HEET.</p>
-        <h1 id="heroTitle">Curious mind.<br><em>Builder's</em> hands<span class="lime-period">.</span></h1>
-        <p class="hero-description">I turn ideas into <strong>useful digital experiences</strong> — from Android apps and web tools to game worlds.</p>
-        <div class="hero-buttons">
-          <a class="button button-lime" href="#work">Explore my work <span>↘</span></a>
-          <a class="button button-quiet" href="mailto:heets85520@gmail.com">Let's connect <span>↗</span></a>
+    <section class="hero section-wrap" id="home">
+      <div class="hero-topline mono"><span><i class="live-dot"></i> INDEPENDENT SOFTWARE / INDIA</span><span>BUILT WITH CURIOSITY <b>↗</b></span></div>
+      <div class="hero-wordmark" aria-hidden="true">HEETDEVLAB</div>
+      <div class="hero-layout">
+        <div class="hero-copy reveal">
+          <p class="hero-kicker mono">A SMALL LAB FOR BIG IDEAS <span>↘</span></p>
+          <h1>Useful apps.<br><em>Original worlds.</em></h1>
+          <p class="hero-tag mono">ANDROID <b>•</b> WEB TOOLS <b>•</b> GAME WORLDS</p>
+          <p class="hero-intro">HeetDevLab is an independent software brand where practical apps, browser utilities and game ideas take shape — one thoughtful build at a time.</p>
+          <div class="hero-actions"><a class="button button-red" href="#products">Explore the work <span>↗</span></a><a class="button button-quiet" href="#games">Discover game projects <span>↓</span></a></div>
+          <div class="hero-footer-note mono"><span>01 / BUILD</span><span>02 / LEARN</span><span>03 / IMPROVE</span><span>04 / REPEAT ↗</span></div>
         </div>
-        <div class="hero-meta">
-          <span><i></i> BCA STUDENT</span>
-          <span>BHAVNAGAR, GUJARAT</span>
-          <span>LEARNING BY BUILDING</span>
+        <div class="brand-stage reveal">
+          <div class="stage-orbit orbit-a"></div><div class="stage-orbit orbit-b"></div><div class="stage-orbit orbit-c"></div>
+          <div class="orbit-node node-a mono">ANDROID / APPS</div><div class="orbit-node node-b mono">WEB / TOOLS</div><div class="orbit-node node-c mono">GAME / WORLDS</div><div class="orbit-node node-d mono">AI / EXPERIMENTS</div>
+          <div class="brand-core"><div class="core-inner">H<span>.</span></div><small class="mono">HEETDEVLAB / CORE</small></div>
+          <div class="stage-index mono">FIG. 01 <span>INDEPENDENT BUILD SYSTEM</span></div><div class="stage-arrow arrow-a">↗</div><div class="stage-arrow arrow-b">↘</div><div class="stage-arrow arrow-c">↗</div>
         </div>
       </div>
-
-      <div class="hero-portrait-wrap">
-        <div class="portrait-orbit orbit-one" aria-hidden="true"></div>
-        <div class="portrait-orbit orbit-two" aria-hidden="true"></div>
-        <div class="portrait-index">PROFILE / 001</div>
-        <figure class="portrait-frame">
-          <img src="assets/profile.png" alt="Portrait of Heet Shah" fetchpriority="high">
-          <div class="portrait-fallback" aria-hidden="true">H<span>.</span></div>
-          <figcaption><span>HEET SHAH</span><span>DEVELOPER & BUILDER</span></figcaption>
-        </figure>
-        <div class="portrait-stamp"><span>H.</span><small>IDEAS<br>INTO<br>BUILDS</small></div>
-        <div class="portrait-note note-top">ANDROID <b>↗</b></div>
-        <div class="portrait-note note-bottom">WEB · GAMES · TOOLS</div>
-      </div>
-      <a class="scroll-cue" href="#about"><span class="scroll-line"></span> SCROLL TO DISCOVER</a>
-      <div class="hero-side-label" aria-hidden="true">BUILD / LEARN / IMPROVE / REPEAT</div>
+      <div class="hero-bottomline mono"><span>SOFTWARE WITH A PURPOSE / MADE IN INDIA</span><span>SCROLL TO EXPLORE <b>↓</b></span></div>
     </section>
 
-    <!-- MOVING STRIP -->
-    <div class="ticker" aria-label="Areas of interest">
-      <div class="ticker-track">
-        <span>ANDROID DEVELOPMENT</span><b>✳</b><span>WEB EXPERIENCES</span><b>✳</b><span>GAME DEVELOPMENT</span><b>✳</b><span>PRODUCT THINKING</span><b>✳</b>
-        <span>ANDROID DEVELOPMENT</span><b>✳</b><span>WEB EXPERIENCES</span><b>✳</b><span>GAME DEVELOPMENT</span><b>✳</b><span>PRODUCT THINKING</span><b>✳</b>
-      </div>
-    </div>
+    <div class="ticker" aria-label="Studio focus"><div class="ticker-track mono"><span>ANDROID APPLICATIONS <b>↗</b> PRIVACY-FOCUSED SOFTWARE <b>↗</b> BROWSER UTILITIES <b>↗</b> GAME DEVELOPMENT <b>↗</b> INDEPENDENT IDEAS <b>↗</b></span><span>ANDROID APPLICATIONS <b>↗</b> PRIVACY-FOCUSED SOFTWARE <b>↗</b> BROWSER UTILITIES <b>↗</b> GAME DEVELOPMENT <b>↗</b> INDEPENDENT IDEAS <b>↗</b></span></div></div>
 
-    <!-- ABOUT -->
-    <section class="about section-shell" id="about">
-      <div class="section-rail"><span>01</span><i></i><span>ABOUT</span></div>
-      <div class="about-main">
-        <p class="section-kicker">A LITTLE ABOUT ME</p>
-        <h2>I like making<br>ideas <span>real.</span></h2>
-        <div class="about-bottom">
-          <p class="about-copy">I'm Heet Shah — a BCA student and independent developer from Bhavnagar. I enjoy building practical Android apps, privacy-focused tools and experiments that help me learn by doing.</p>
-          <div class="about-facts">
-            <div><span>STUDYING</span><strong>Bachelor of Computer Applications</strong></div>
-            <div><span>FOCUS</span><strong>Android · Web · Interactive projects</strong></div>
-            <div><span>BUILDING UNDER</span><strong><a href="https://heetdevlab.github.io/" target="_blank" rel="noopener">HeetDevLab ↗</a></strong></div>
-          </div>
-        </div>
+    <section class="products-section section-wrap" id="products">
+      <div class="section-index mono reveal"><span>01.00 / SOFTWARE & TOOLS</span><span>THE PRODUCT SHELF / 03</span></div>
+      <div class="section-heading-row reveal"><div><p class="eyebrow mono">MADE TO BE USEFUL</p><h2>Products with<br><em>a purpose.</em></h2></div><p class="heading-side mono">SMALL, FOCUSED PRODUCTS.<br>BUILT AROUND REAL USE. <b>↘</b></p></div>
+
+      <article class="flagship reveal">
+        <div class="flagship-copy"><div class="project-meta mono"><span>01 / ANDROID SECURITY</span><span class="project-state"><i></i> PRODUCT</span></div><div class="product-mark sentinex-mark"><span>⌑</span></div><p class="project-category mono">PRIVACY / APP PROTECTION</p><h3>Sentinex<span>.</span></h3><p class="product-desc">A focused Android app-protection experience built around locking selected apps and practical privacy features.</p><div class="feature-tags mono"><span>APP LOCK</span><span>INTRUDER DETECTION</span><span>GHOST MODE</span><span>SECURITY LOGS</span></div><a class="product-link" href="https://heetdevlab.github.io/Sentinex/" target="_blank" rel="noopener">Explore Sentinex <b>↗</b></a></div>
+        <div class="flagship-art"><div class="art-rings"></div><div class="device-frame"><div class="device-speaker"></div><div class="device-screen"><div class="screen-brand mono">SENTINEX <span>SECURE</span></div><div class="screen-emblem">⌑</div><p class="screen-status mono">PROTECTION ACTIVE</p><div class="screen-widget"><span>App protection</span><b>ON</b></div><div class="screen-widget"><span>Privacy status</span><b>SAFE</b></div><div class="screen-bottom mono"><i></i><i></i><i></i></div></div></div><div class="art-caption cap-one mono">SECURITY / 001 <b>↗</b></div><div class="art-caption cap-two mono">ANDROID APPLICATION</div><div class="art-cross cross-one">+</div><div class="art-cross cross-two">×</div></div>
+      </article>
+
+      <div class="product-tiles">
+        <article class="product-tile reveal"><div class="tile-top mono"><span>02 / PRIVATE STORAGE</span><span>ANDROID</span></div><div class="tile-visual vault-visual"><div class="vault-box"><span>▣</span></div><div class="visual-arrow">↗</div></div><p class="project-category mono">PRIVATE FILES / MEDIA</p><h3>Sentinex Vault</h3><p>A companion concept for keeping personal files and media private and organised.</p><a href="https://heetdevlab.github.io/Sentinex-Vault/" target="_blank" rel="noopener">Explore Vault <b>↗</b></a></article>
+        <article class="product-tile reveal"><div class="tile-top mono"><span>03 / BROWSER UTILITIES</span><span>WEB</span></div><div class="tile-visual web-visual"><div class="tool-orbit"><i>⌘</i><i>#</i><i>↗</i></div><div class="visual-arrow">↗</div></div><p class="project-category mono">EVERYDAY DIGITAL TOOLS</p><h3>WebTools</h3><p>Lightweight browser-based tools for passwords, PINs, hashes and more.</p><a href="https://heetdevlab.github.io/Webtools/" target="_blank" rel="noopener">Open WebTools <b>↗</b></a></article>
       </div>
     </section>
 
-    <!-- WORK -->
-    <section class="work section-shell" id="work">
-      <div class="section-rail"><span>02</span><i></i><span>SELECTED WORK</span></div>
-      <div class="work-main">
-        <div class="section-intro">
-          <p class="section-kicker">THINGS I'VE BEEN MAKING</p>
-          <h2>Work in<br><span>progress.</span></h2>
-          <p class="intro-note">A mix of shipped ideas, useful tools and worlds still taking shape.</p>
-        </div>
+    <section class="games-section section-wrap" id="games">
+      <div class="section-index mono reveal"><span>02.00 / GAME WORLDS</span><span>EXPERIMENTS IN PROGRESS</span></div>
+      <div class="section-heading-row reveal"><div><p class="eyebrow mono">PLAYABLE IDEAS</p><h2>Worlds worth<br><em>building.</em></h2></div><p class="heading-side mono">INTERACTIVE SYSTEMS.<br>ROOM TO EXPERIMENT. <b>↘</b></p></div>
+      <article class="game-feature reveal">
+        <div class="game-copy"><p class="project-category mono">GODOT / 3D BUSINESS SIMULATOR</p><h3>TECH<br>EMPIRE<span>.</span></h3><p>A modern electronics shop simulator about starting small, arranging a store, managing products and growing a tech business.</p><div class="game-tags mono"><span>FIRST-PERSON</span><span>SHOP MANAGEMENT</span><span>ANDROID + PC GOAL</span></div><div class="game-status mono"><i></i> IN DEVELOPMENT</div></div>
+        <div class="game-art"><div class="game-grid"></div><div class="store-sign mono">TECH <b>EMPIRE</b></div><div class="shop-floor"><div class="shelf shelf-one"><i></i><i></i><i></i></div><div class="shelf shelf-two"><i></i><i></i><i></i></div><div class="counter"></div></div><div class="game-glow"></div><div class="game-art-label mono">STORE SYSTEM / BUILD 001</div><div class="game-arrow">↗</div></div>
+      </article>
+      <p class="games-note mono">MORE GAME EXPERIMENTS WILL APPEAR HERE AS THEY BECOME READY. <span>↗</span></p>
+    </section>
 
-        <!-- FEATURED SENTINEX -->
-        <article class="feature-project project-sentinex reveal">
-          <div class="feature-copy">
-            <div class="project-overline"><span>01 / ANDROID</span><span class="status"><i></i> PRODUCT</span></div>
-            <h3>Sentinex<span class="lime-period">.</span></h3>
-            <p class="project-lead">Your apps.<br>Your privacy.</p>
-            <p class="project-description">An Android app-protection project built around app locking, intruder detection and practical privacy features.</p>
-            <div class="project-tags"><span>KOTLIN</span><span>ANDROID</span><span>SECURITY</span></div>
-            <div class="project-actions">
-              <a href="https://heetdevlab.github.io/Sentinex/" target="_blank" rel="noopener">Explore Sentinex <b>↗</b></a>
-              <a class="text-action" href="https://github.com/HeetDevLab/Sentinex" target="_blank" rel="noopener">Source code ↗</a>
-            </div>
-          </div>
-          <div class="sentinex-art" aria-label="Decorative Sentinex app interface illustration">
-            <div class="art-grid"></div>
-            <div class="art-caption">APP PROTECTION / ANDROID</div>
-            <div class="phone-mockup">
-              <div class="phone-speaker"></div>
-              <div class="phone-head"><span class="sentinex-mark">S</span><span>SENTINEX</span><small>SECURE</small></div>
-              <div class="phone-shield"><span>S</span></div>
-              <p>You're protected.</p>
-              <small class="phone-sub">PRIVATE ACCESS CONTROL</small>
-              <div class="phone-controls"><i>⌑</i><i>◈</i><i>⌘</i></div>
-              <div class="phone-lock-row"><span>APP LOCK</span><b>ACTIVE</b></div>
-            </div>
-            <div class="art-float art-float-a">01 <span>SECURE</span></div>
-            <div class="art-float art-float-b">PRIVACY BY DESIGN</div>
-          </div>
-        </article>
-
-        <!-- PROJECT ROWS -->
-        <div class="project-list">
-          <a class="project-row reveal" href="https://heetdevlab.github.io/Sentinex-Vault/" target="_blank" rel="noopener">
-            <div class="row-number">02</div>
-            <div class="row-symbol vault-symbol"><span>⌑</span></div>
-            <div class="row-copy"><span class="row-category">ANDROID / PRIVACY</span><h3>Sentinex Vault</h3><p>A private space for personal files and media.</p></div>
-            <div class="row-status">PRODUCT PAGE</div>
-            <span class="row-arrow">↗</span>
-          </a>
-          <a class="project-row reveal" href="https://heetdevlab.github.io/Webtools/" target="_blank" rel="noopener">
-            <div class="row-number">03</div>
-            <div class="row-symbol tools-symbol"><span>⌘</span></div>
-            <div class="row-copy"><span class="row-category">WEB / UTILITIES</span><h3>WebTools</h3><p>Small browser tools for useful everyday tasks.</p></div>
-            <div class="row-status">LIVE TOOLS</div>
-            <span class="row-arrow">↗</span>
-          </a>
-        </div>
-
-        <!-- GAME FEATURE -->
-        <article class="game-project reveal">
-          <div class="game-copy">
-            <div class="project-overline"><span>04 / GAME DEVELOPMENT</span><span class="status status-dev"><i></i> IN DEVELOPMENT</span></div>
-            <p class="game-eyebrow">A WORLD I'M BUILDING</p>
-            <h3>TECH EMPIRE<br><span>SIMULATOR</span></h3>
-            <p>A first-person electronics business simulator. Start with a small shop, grow it step by step.</p>
-            <div class="project-tags"><span>GODOT</span><span>GDSCRIPT</span><span>ANDROID FIRST</span></div>
-            <a class="game-link" href="https://youtube.com/@heetplayscode" target="_blank" rel="noopener">Follow development <b>↗</b></a>
-          </div>
-          <div class="game-art" aria-label="Illustrated electronics shop game environment">
-            <div class="game-sky"></div>
-            <div class="game-sun"></div>
-            <div class="game-floor"></div>
-            <div class="store-building">
-              <div class="store-roof"></div>
-              <div class="store-face">
-                <div class="store-sign">TECH <b>EMPIRE</b></div>
-                <div class="store-window window-left"><i></i><i></i><i></i></div>
-                <div class="store-window window-right"><i></i><i></i><i></i></div>
-                <div class="store-door"><span></span></div>
-                <div class="store-base"></div>
-              </div>
-            </div>
-            <div class="game-product product-a">PHONE <b>01</b></div>
-            <div class="game-product product-b">LAPTOP <b>02</b></div>
-            <div class="game-art-label">SIMULATE · BUILD · EXPAND</div>
-          </div>
-        </article>
-
-        <div class="experiment-row reveal">
-          <div><span class="row-category">05 / AI EXPERIMENT</span><h3>Nexora</h3><p>An AI assistant concept exploring voice, tasks and device workflows.</p></div>
-          <span class="experiment-status">EXPLORING <i>↗</i></span>
-        </div>
+    <section class="lab-section section-wrap" id="lab">
+      <div class="section-index mono reveal"><span>03.00 / THE EXPERIMENTS</span><span>IDEAS UNDER CONSTRUCTION</span></div>
+      <div class="section-heading-row reveal"><div><p class="eyebrow mono">THE NEXT LAYER</p><h2>Not every idea<br>starts <em>finished.</em></h2></div><p class="heading-side mono">PROTOTYPES, NOTES<br>AND FUTURE SYSTEMS <b>↘</b></p></div>
+      <div class="experiment-grid">
+        <article class="experiment-card reveal"><div class="experiment-top mono"><span>01 / AI ASSISTANT</span><span>IN PROGRESS</span></div><div class="experiment-symbol">✳</div><h3>Nexora</h3><p>An AI assistant project exploring voice and text interaction, task scheduling, device actions and personal workflows.</p><div class="experiment-bottom mono"><span>AI / ANDROID / AUTOMATION</span><b>↗</b></div></article>
+        <article class="experiment-card reveal"><div class="experiment-top mono"><span>02 / DEVELOPMENT NOTES</span><span>ONGOING</span></div><div class="experiment-symbol note-symbol">≋</div><h3>Studio Journal</h3><p>Updates, practical notes and lessons from building software, apps and game prototypes.</p><div class="experiment-bottom mono"><span>WRITING / PROCESS / LEARNING</span><a href="https://heetdevlab.github.io/Blog/" target="_blank" rel="noopener">READ JOURNAL ↗</a></div></article>
       </div>
     </section>
 
-    <!-- TOOLKIT -->
-    <section class="toolkit section-shell" id="toolkit">
-      <div class="section-rail"><span>03</span><i></i><span>TOOLKIT</span></div>
-      <div class="toolkit-main">
-        <p class="section-kicker">WHAT I WORK WITH</p>
-        <h2>Tools for<br><span>the next idea.</span></h2>
-        <div class="toolkit-groups">
-          <div class="tool-group"><span>01 / ANDROID & APP DEVELOPMENT</span><div><b>Kotlin</b><b>Android Studio</b></div></div>
-          <div class="tool-group"><span>02 / WEB DEVELOPMENT</span><div><b>HTML</b><b>CSS</b><b>JavaScript</b></div></div>
-          <div class="tool-group"><span>03 / PROGRAMMING</span><div><b>Python</b><b>C</b></div></div>
-          <div class="tool-group"><span>04 / GAME DEVELOPMENT</span><div><b>Godot</b><b>GDScript</b></div></div>
-          <div class="tool-group"><span>05 / WORKFLOW</span><div><b>Git</b><b>GitHub</b><b>VS Code</b></div></div>
-        </div>
+    <section class="studio-section section-wrap" id="studio">
+      <div class="section-index mono reveal"><span>04.00 / THE STUDIO</span><span>ABOUT HEETDEVLAB</span></div>
+      <div class="studio-layout">
+        <div class="studio-copy reveal"><p class="eyebrow mono">INDEPENDENT BY DESIGN</p><h2>A small lab.<br><em>A growing world.</em></h2><p>HeetDevLab is an independent software brand founded by Heet Shah. It brings together Android applications, browser tools and original game projects under one roof.</p><p>The goal is simple: make software that feels useful, thoughtful and enjoyable — then keep improving it.</p><a class="product-link" href="https://heetdevlab.github.io/portfolio/">Meet the developer <b>↗</b></a></div>
+        <div class="studio-seal reveal"><div class="seal-orbit"></div><div class="seal-core"><span>H<span>.</span></span><small class="mono">INDEPENDENT<br>SOFTWARE LAB</small></div><div class="seal-label seal-left mono">APPS</div><div class="seal-label seal-right mono">TOOLS</div><div class="seal-label seal-bottom mono">GAMES / IDEAS</div><div class="seal-arrow">↗</div></div>
       </div>
     </section>
 
-    <!-- JOURNEY -->
-    <section class="journey section-shell" id="journey">
-      <div class="section-rail"><span>04</span><i></i><span>THE JOURNEY</span></div>
-      <div class="journey-main">
-        <p class="section-kicker">STILL LEARNING. ALWAYS BUILDING.</p>
-        <h2>Not a straight line.<br><span>A build loop.</span></h2>
-        <div class="journey-steps">
-          <div><span>01</span><strong>Learn</strong><p>Build a strong foundation through BCA and self-learning.</p></div>
-          <div><span>02</span><strong>Make</strong><p>Turn concepts into Android apps, web tools and experiments.</p></div>
-          <div><span>03</span><strong>Improve</strong><p>Test, fix, redesign and learn from every release.</p></div>
-        </div>
-        <div class="education-line"><span>EDUCATION</span><div><strong>Bachelor of Computer Applications</strong><p>Shree Swaminarayan College of Computer Science · MKBU</p></div><span class="education-mark">BCA</span></div>
-      </div>
+    <section class="process-section section-wrap">
+      <div class="section-index mono reveal"><span>05.00 / THE METHOD</span><span>HOW IDEAS MOVE</span></div>
+      <div class="section-heading-row reveal"><div><p class="eyebrow mono">A REPEATABLE LOOP</p><h2>Build. Test.<br><em>Make it better.</em></h2></div><p class="heading-side mono">NO MAGIC SHORTCUT.<br>JUST CONSISTENT WORK. <b>↘</b></p></div>
+      <div class="process-line"><div class="process-step reveal"><span class="mono">01</span><strong>Imagine</strong><small>Find the useful idea.</small><b>↗</b></div><div class="process-arrow">→</div><div class="process-step reveal"><span class="mono">02</span><strong>Design</strong><small>Plan the experience.</small><b>↗</b></div><div class="process-arrow">→</div><div class="process-step reveal"><span class="mono">03</span><strong>Build</strong><small>Turn plans into software.</small><b>↗</b></div><div class="process-arrow">→</div><div class="process-step reveal"><span class="mono">04</span><strong>Improve</strong><small>Test, fix and refine.</small><b>↗</b></div></div>
     </section>
 
-    <!-- CONTACT -->
-    <section class="contact-section" id="contact">
-      <div class="contact-grid" aria-hidden="true"></div>
-      <div class="contact-content">
-        <p class="section-kicker">HAVE SOMETHING IN MIND?</p>
-        <h2>Let's make<br><em>something useful.</em></h2>
-        <a class="contact-email" href="mailto:heets85520@gmail.com">heets85520@gmail.com <span>↗</span></a>
-        <div class="contact-links">
-          <a href="https://github.com/HeetDevLab" target="_blank" rel="noopener">GITHUB ↗</a>
-          <a href="https://instagram.com/heetdevlab" target="_blank" rel="noopener">INSTAGRAM ↗</a>
-          <a href="https://youtube.com/@heetplayscode" target="_blank" rel="noopener">YOUTUBE ↗</a>
-          <a href="assets/Heet_Shah_Resume.pdf" download>RESUME ↓</a>
-        </div>
-      </div>
-      <div class="contact-bottom"><span>HEET SHAH / DEVELOPER</span><span>BHAVNAGAR, INDIA</span></div>
-    </section>
+    <section class="contact-section section-wrap" id="contact"><div class="contact-frame reveal"><div class="contact-arrows" aria-hidden="true">↗ ↗ ↗</div><p class="eyebrow mono">CONNECT / COLLABORATE</p><h2>Have a project<br>in <em>mind?</em></h2><p class="contact-copy">Explore the products, follow the build journey or connect with the developer behind the lab.</p><div class="contact-actions"><a class="button button-red" href="mailto:heets85520@gmail.com">Contact HeetDevLab <span>↗</span></a><a class="button button-quiet" href="https://heetdevlab.github.io/portfolio/">Personal portfolio <span>↗</span></a></div><div class="contact-foot mono"><span>INDEPENDENT SOFTWARE / INDIA</span><span>BUILT WITH CURIOSITY <i class="live-dot"></i></span></div></div></section>
   </main>
 
-  <footer class="site-footer">
-    <a class="footer-mark" href="#top">H<span>.</span></a>
-    <p>Built with curiosity <span>✳</span> and a lot of iteration.</p>
-    <a href="https://heetdevlab.github.io/" target="_blank" rel="noopener">HEEtDEVLAB ↗</a>
-    <small>© <span id="year">2026</span> HEET SHAH</small>
-  </footer>
+  <footer class="site-footer section-wrap"><a class="footer-brand" href="#top">H<span>.</span> HEETDEVLAB</a><p class="mono">INDEPENDENT SOFTWARE / © <span id="year"></span></p><div><a href="https://github.com/HeetDevLab" target="_blank" rel="noopener">GITHUB ↗</a><a href="https://youtube.com/@heetplayscode" target="_blank" rel="noopener">YOUTUBE ↗</a><a href="https://heetdevlab.github.io/portfolio/">PORTFOLIO ↗</a></div></footer>
+  <script src="script.js"></script>
 </body>
 </html>
